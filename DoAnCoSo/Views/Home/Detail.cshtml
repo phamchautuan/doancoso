@@ -1,0 +1,78 @@
+﻿@model DoAnCoSo.Models.SanPham
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title ROYAL CARS </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+    <!-- Favicon -->
+    <link href="~/Assets/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="~/Assets/lib/owlcarousel/~/Assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/Assets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="~/Assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="~/Assets/css/style.css" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+
+<!-- Detail Start -->
+<div class="container-fluid pt-5">
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-lg-8 mb-5">
+                <h1 class="display-4 text-uppercase mb-5">@Model.TenXe</h1>
+                <div class="row mx-n2 mb-3">
+                    <img 
+                </div>
+                <p>Mô Tả</p>
+                <div class="row pt-2">
+                    <div class="col-md-3 col-6 mb-2">
+                        <i class="fa fa-car text-primary mr-2"></i>
+                        <span>Model: @Model.NamSanXuat</span>
+                    </div>
+                    <div class="col-md-3 col-6 mb-2">
+                        <i class="fa fa-cogs text-primary mr-2"></i>
+                        <span>@Model.HopSo</span>
+                    </div>
+                    <div class="col-md-3 col-6 mb-2">
+                        <i class="fa fa-road text-primary mr-2"></i>
+                        <span>20km/liter</span>
+                    </div>
+                    <div class="col-md-3 col-6 mb-2">
+                        <i class="fa fa-eye text-primary mr-2"></i>
+                        <span>GPS Navigation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-5">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Detail End -->
+
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

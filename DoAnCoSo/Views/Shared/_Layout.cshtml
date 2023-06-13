@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title ROYAL CARS </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+    <!-- Favicon -->
+    <link href="~/Assets/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="~/Assets/lib/owlcarousel/~/Assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/Assets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="~/Assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="~/Assets/css/style.css" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script>!function (s, u, b, i, z) { var o, t, r, y; s[i] || (s._sbzaccid = z, s[i] = function () { s[i].q.push(arguments) }, s[i].q = [], s[i]("setAccount", z), r = ["widget.subiz.net", "storage.googleapis" + (t = ".com"), "app.sbz.workers.dev", i + "a" + (o = function (k, t) { var n = t <= 6 ? 5 : o(k, t - 1) + o(k, t - 3); return k !== t ? n : n.toString(32) })(20, 20) + t, i + "b" + o(30, 30) + t, i + "c" + o(40, 40) + t], (y = function (k) { var t, n; s._subiz_init_2094850928430 || r[k] && (t = u.createElement(b), n = u.getElementsByTagName(b)[0], t.async = 1, t.src = "https://" + r[k] + "/sbz/app.js?accid=" + z, n.parentNode.insertBefore(t, n), setTimeout(y, 2e3, k + 1)) })(0)) }(window, document, "script", "subiz", "acrrnylfrkwspwygzhsq")</script>
+
+
+</head>
+<body style="background-color: #C0C0C0 " >
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark" >
+        <div class="container">
+            @Html.ActionLink("ROYAL CAR", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("TinTuc", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.Partial("~/Views/GioHang/GioHangPartial.cshtml")</li>
+                    <li>@Html.ActionLink("Register", "DangKy", "NguoiDung", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Login", "DangNhap", "NguoiDung", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link" })</li>
+
+                </ul>
+                @*@Html.Partial("_LoginPartial")*@
+
+
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content" >
+        @*@Html.Partial("LoginPartial.html")*@
+        @using (Html.BeginForm("Index", "Cars", FormMethod.Get, new { @class = "form-inline " }))
+        {
+            <div class="wrap" style="width:1200px; padding-left:550px; position:relative; block-size:100px">
+                <form action="" class="search" method="post" ;>
+                    <input type="text" class="searchTerm" style="width:1000px" value="@ViewBag.KeyWord"
+                           name="searchString" placeholder="Nhập tên cần tìm" />
+                    <button type="submit" class="button searchButton">
+                        Tìm Kiếm
+                    </button>
+                </form>
+            </div>
+            <!-- Carousel Start -->
+            <div class="container-fluid p-0" style="margin-bottom: 90px;">
+                <div id="header-carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="w-100" src="~/Assets/img/carousel-1.jpg" alt="Image">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="p-3" style="max-width: 900px;">
+                                    <h4 class="text-white text-uppercase mb-md-3">Buy A Car</h4>
+                                    <h1 class="display-1 text-white mb-md-4">Best Cars In Your Location</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="w-100" src="~/Assets/img/carousel-2.jpg" alt="Image">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="p-3" style="max-width: 900px;">
+                                    <h4 class="text-white text-uppercase mb-md-3">Buy A Car</h4>
+                                    <h1 class="display-1 text-white mb-md-4">Quality Cars with Unlimited Miles</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
+                        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                            <span class="carousel-control-prev-icon mb-n2"></span>
+                        </div>
+                    </a>
+                    <a class="carousel-control-next" href="#header-carousel" data-slide="next">
+                        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                            <span class="carousel-control-next-icon mb-n2"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Carousel End -->
+
+            <br />
+            <br />
+        }
+        @RenderBody()
+        <hr />
+        <footer>
+            @{
+                Html.RenderPartial("_PartialView");
+            }
+            <p>&copy; @DateTime.Now.Year - Công ty TNHH ROYAL CAR</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+<style>
+    input {
+        text-align: center;
+        padding: 12px 40px;
+        margin: 20px 0;
+        box-sizing: border-box;
+    }
+    .searchButton {
+        border: 1px solid green;
+        border-radius: 8px;
+    }
+    
+</style>
