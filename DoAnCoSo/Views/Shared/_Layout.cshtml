@@ -34,6 +34,7 @@
 <body style="background-color: #C0C0C0 " >
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark" >
         <div class="container">
+          
             @Html.ActionLink("ROYAL CAR", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -41,9 +42,9 @@
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("TinTuc", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
 
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("TinTuc", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.Partial("~/Views/GioHang/GioHangPartial.cshtml")</li>
                     <li>@Html.ActionLink("Register", "DangKy", "NguoiDung", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "nav-link" })</li>
@@ -56,11 +57,16 @@
             </div>
         </div>
     </nav>
-    <div class="container body-content" >
+    <div class="container body-content">
         @*@Html.Partial("LoginPartial.html")*@
-        @using (Html.BeginForm("Index", "Cars", FormMethod.Get, new { @class = "form-inline " }))
+        @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { @class = "form-inline" }))
         {
-            <div class="wrap" style="width:1200px; padding-left:550px; position:relative; block-size:100px">
+            @*<div class="form-group form-inline" style="display: flex;">
+                <input type="Text" class="form-control col-md-10" value="@ViewBag.Keyword" name="searchString" placeholder="Nhập tên xe cần tìm">
+                <input type="submit" class="btn btn-info" value="Tìm Xe" style="margin-left:10px;">
+            </div>
+            <br>*@
+            <div class="wrap" style="width: 1200px; padding-left: 550px; position: relative; block-size: 100px;">
                 <form action="" class="search" method="post" ;>
                     <input type="text" class="searchTerm" style="width:1000px" value="@ViewBag.KeyWord"
                            name="searchString" placeholder="Nhập tên cần tìm" />
@@ -69,6 +75,11 @@
                     </button>
                 </form>
             </div>
+        }
+
+        @using (Html.BeginForm("Index", "Cars", FormMethod.Get, new { @class = "form-inline " }))
+        {
+
             <!-- Carousel Start -->
             <div class="container-fluid p-0" style="margin-bottom: 90px;">
                 <div id="header-carousel" class="carousel slide" data-ride="carousel">
@@ -115,7 +126,7 @@
             @{
                 Html.RenderPartial("_PartialView");
             }
-            <p>&copy; @DateTime.Now.Year - Công ty TNHH ROYAL CAR</p>
+            <p style="color:#fff; font-size:30px;">&copy; @DateTime.Now.Year - Công ty TNHH ROYAL CAR</p>
         </footer>
     </div>
 
