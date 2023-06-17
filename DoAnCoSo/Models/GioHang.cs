@@ -9,7 +9,7 @@ namespace DoAnCoSo.Models
 {
     public class GioHang
     {
-        dbCarDealerDataContext data = new dbCarDealerDataContext();
+        CarDealertDataContext data = new CarDealertDataContext();
 
         public int MaXe { get; set; }
 

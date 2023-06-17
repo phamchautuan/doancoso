@@ -12,7 +12,7 @@ namespace DoAnCoSo.Controllers
 {
     public class HomeController : Controller
     {
-        dbCarDealerDataContext db = new dbCarDealerDataContext();
+        CarDealertDataContext db = new CarDealertDataContext();
         
         public ActionResult Index(int? page, int? size, string searchString)
         {

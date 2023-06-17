@@ -5,7 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>Login</h2>
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -24,23 +23,23 @@
             </div>*@
 
         <div class="row">
-            @Html.LabelFor(model => model.Email, new { @class = "col-md-2 col-form-label" })
+            @Html.LabelFor(model => model.Email, "Email", new { @class = "col-md-2 col-form-label" })
             <div class="col-md-10">
                 @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="row">
-            @Html.LabelFor(model => model.MatKhau, new { @class = "col-md-2 col-form-label" })
+            @Html.LabelFor(model => model.MatKhau, "Mật Khẩu", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.MatKhau, new { @class = "form-control" })
+                @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { type = "password" } })
                 @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="login" class="btn btn-default" />
+                <input type="submit" value="login" class="btn btn-outline-primary" />
             </div>
         </div>
         <p>

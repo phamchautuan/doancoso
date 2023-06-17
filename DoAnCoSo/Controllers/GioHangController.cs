@@ -9,7 +9,7 @@ namespace DoAnCoSo.Controllers
 {
     public class GioHangController : Controller
     {
-        dbCarDealerDataContext db = new dbCarDealerDataContext();
+        CarDealertDataContext db = new CarDealertDataContext();
         public List<GioHang> Laygiohang()
         {
             List<GioHang> lstGiohang = Session["Giohang"] as List<GioHang>;
@@ -50,6 +50,11 @@ namespace DoAnCoSo.Controllers
                 tsl = lstGioHang.Sum(n => n.iSoluong);
             }
             return tsl;
+        }
+        public ActionResult TongDonHang()
+        {
+            var ct = db.DonHangs;
+            return View(ct);
         }
 
         public int TongSLSanPham()
@@ -152,13 +157,13 @@ namespace DoAnCoSo.Controllers
             SanPham s = new SanPham();
 
             List<GioHang> gh = Laygiohang();
-            var ngaygiao = String.Format("{0:MM/dd/yyyy}", collection["NgayGiao"]);
+            //var ngaygiao = String.Format("{0:MM/dd/yyyy}", collection["NgayGiao"]);
             dh.MaKH = kh.MaKH;
             dh.NgayDat = DateTime.Now;
             //dh.NgayGiao = DateTime.Parse(ngaygiao);
             dh.GiaoHang = false;
             dh.ThanhToan = false;
-            dh.MaDon = db.DonHangs.OrderByDescending(x=>x.MaDon).First().MaDon + 1;
+            //dh.MaDon = db.DonHangs.OrderByDescending(x=>x.MaDon).First().MaDon + 1;
             db.DonHangs.InsertOnSubmit(dh);
             db.SubmitChanges();
             foreach (var item in gh)

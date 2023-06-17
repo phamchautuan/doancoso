@@ -1,0 +1,112 @@
+﻿@model IEnumerable<DoAnCoSo.Models.SanPham>
+
+@{
+    ViewBag.Title = "TongSanPham";
+    Layout = "~/Views/thongke/_LayoutAdmin.cshtml";
+}
+
+<h2>Tổng Sản Phẩm</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới","Create","thongke")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.MaLoai)*@
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.TenXe)*@Tên xe
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Hinh)*@Hình chính
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Hinh1)*@
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Hinh2)*@
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Hinh3)*@
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.SoLuongTon)*@Số lượng tồn
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.GiaBan)*@Giá bán
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.DongCo)*@Động cơ
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.HopSo)*@Hộp số
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.CongSuat)*@Công suất
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.ChieuDai)*@Chiều dài
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.ChieuRong)*@Chiều rộng
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.NamSanXuat)*@Năm sản xuất
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.MaLoai)*@
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenXe)
+        </td>
+        <td>
+            <img width="200" height="155" src="@item.Hinh" />
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.Hinh1)*@
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.Hinh2)*@
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.Hinh3)*@
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongTon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaBan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DongCo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HopSo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CongSuat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChieuDai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChieuRong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamSanXuat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit" ,new { id=item.MaXe }) |
+            @Html.ActionLink("Xóa", "Delete", "thongke", new { id=item.MaXe })
+            
+        </td>
+    </tr>
+}
+
+</table>

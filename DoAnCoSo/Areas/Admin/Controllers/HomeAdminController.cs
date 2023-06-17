@@ -23,7 +23,7 @@ namespace DoAnCoSo.Areas.Admin.Controllers
         public ActionResult DangNhap(string user, string pass) 
         {
             //check db
-            dbCarDealerDataContext db = new dbCarDealerDataContext();
+            CarDealertDataContext db = new CarDealertDataContext();
             int demTaiKhoan = db.KhachHangs.Count(m => m.TenDangNhap.ToLower()== user.ToLower() && m.MatKhau == pass);
             return View();
 

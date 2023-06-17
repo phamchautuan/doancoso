@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "index";
+    Layout = null;
+    var Count = ViewBag.Data as int[];
+    ViewData["TitleHeader"] = "Thống kê chung";
+}
+<div class="row">
+    <div class="row col-md-12">
+        <div class="col-md-3">
+            <div class="card card-sm-3">
+                <div class="card-icon bg-info">
+                    <i class="ion ion-ios-paper"></i>
+                </div>
+                <div class="card-wrap">
+                    <div class="card-header">
+                        <h4><a href="@Url.Action("Index", "TongDonHang")">Tổng số thong ke hang hoa</a></h4>
+                    </div>
+                    <div class="card-body">
+                        @Count[0]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

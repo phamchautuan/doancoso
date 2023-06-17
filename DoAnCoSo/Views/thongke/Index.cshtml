@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "index - ";
+    Layout = "~/Views/thongke/_LayoutAdmin.cshtml";
+    var Count = ViewBag.Data as int[];
+    ViewData["TitleHeader"] = "Thống kê chung";
+}
+<div class="container">
+    <div class="row">
+        <div class="row col-md-12">
+            <div class="col-md-3">
+                <div class="card card-sm-3">
+                    <div class="card-icon bg-info">
+                        <i class="ion ion-ios-paper"></i>
+                    </div>
+                    <div class="card-wrap">
+                        <div class="card-header">
+                            <h4><a href="@Url.Action("TongDonHang", "GioHang")">Tổng số đơn hàng</a></h4>
+                        </div>
+                        <div class="card-body">
+                            @Count[0]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row col-md-12">
+            <div class="col-md-3">
+                <div class="card card-sm-3">
+                    <div class="card-icon bg-info">
+                        <i class="ion ion-ios-paper"></i>
+                    </div>
+                    <div class="card-wrap">
+                        <div class="card-header">
+                            <h4><a href="@Url.Action("TongSanPham", "thongke")">Tổng số sản phẩm</a></h4>
+                        </div>
+                        <div class="card-body">
+                            @Count[1]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

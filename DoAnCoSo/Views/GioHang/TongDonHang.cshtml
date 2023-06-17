@@ -1,0 +1,60 @@
+﻿@model IEnumerable<DoAnCoSo.Models.DonHang>
+
+@{
+    ViewBag.Title = "TongDonHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tong Don Hang</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Thanh toán 
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.GiaoHang)*@
+            Giao Hàng
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.NgayDat)*@
+            Ngày Đặt
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.NgayGiao)*@
+            Ngày Giao
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.MaKH)*@
+            Mã Khách Hàng
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThanhToan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaoHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayDat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayGiao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaKH)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaDon }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaDon }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaDon })
+        </td>
+    </tr>
+}
+
+</table>
